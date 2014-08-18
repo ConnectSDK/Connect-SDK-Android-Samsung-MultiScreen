@@ -15,7 +15,7 @@ For more information about Connect SDK, visit the [main repository](https://gith
 1. Clone this repository into a subfolder of the Connect SDK Lite project
 2. Import the source files into the Connect SDK Lite Eclipse project
 3. Follow the steps above for Connect SDK integration
-4. In Connect SDK Lite's 'DefaultPlatform.java' file add line  'devicesList.put("com.connectsdk.samsungmultiscreen.MultiScreenService", "com.connectsdk.discovery.provider.SSDPDiscoveryProvider");' inside 'getDeviceServiceMap()' method.
+4. In Connect SDK Lite's `DefaultPlatform.java` file add line  `devicesList.put("com.connectsdk.samsungmultiscreen.MultiScreenService", "com.connectsdk.discovery.provider.SSDPDiscoveryProvider");` inside `getDeviceServiceMap()` method.
 
 ##License
 Copyright (c) 2013-2014 LG Electronics.
