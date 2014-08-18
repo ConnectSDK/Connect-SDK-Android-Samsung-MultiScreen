@@ -21,7 +21,7 @@ import com.connectsdk.service.config.ServiceConfig;
 import com.connectsdk.service.config.ServiceDescription;
 import com.connectsdk.service.sessions.LaunchSession;
 import com.connectsdk.service.sessions.LaunchSession.LaunchSessionType;
-import com.connectsdk.service.sessions.MultiScreenWebAppSession;
+import com.connectsdk.samsungmultiscreen.MultiScreenWebAppSession;
 import com.connectsdk.service.sessions.WebAppSession;
 import com.samsung.multiscreen.application.Application;
 import com.samsung.multiscreen.application.Application.Status;

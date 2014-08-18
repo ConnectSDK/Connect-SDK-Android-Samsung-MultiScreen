@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import com.connectsdk.core.Util;
 import com.connectsdk.service.DeviceService;
-import com.connectsdk.service.MultiScreenService;
+import com.connectsdk.samsungmultiscreen.MultiScreenService;
 import com.connectsdk.service.capability.MediaControl;
 import com.connectsdk.service.capability.MediaPlayer;
 import com.connectsdk.service.capability.listeners.ResponseListener;
