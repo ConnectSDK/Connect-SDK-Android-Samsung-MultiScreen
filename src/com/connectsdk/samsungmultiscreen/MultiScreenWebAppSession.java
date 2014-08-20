@@ -16,6 +16,8 @@ import com.connectsdk.service.command.ServiceCommand;
 import com.connectsdk.service.command.ServiceCommandError;
 import com.connectsdk.service.command.ServiceSubscription;
 import com.connectsdk.service.command.URLServiceSubscription;
+import com.connectsdk.service.sessions.LaunchSession;
+import com.connectsdk.service.sessions.WebAppSession;
 import com.samsung.multiscreen.application.Application;
 import com.samsung.multiscreen.application.Application.Status;
 import com.samsung.multiscreen.application.ApplicationAsyncResult;
