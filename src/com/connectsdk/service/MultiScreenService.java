@@ -1,18 +1,8 @@
-package com.connectsdk.samsungmultiscreen;
+package com.connectsdk.service;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import com.connectsdk.core.MediaInfo;
 import com.connectsdk.core.Util;
-import com.connectsdk.service.DeviceService;
 import com.connectsdk.service.capability.MediaControl;
 import com.connectsdk.service.capability.MediaPlayer;
 import com.connectsdk.service.capability.WebAppLauncher;
@@ -22,7 +12,7 @@ import com.connectsdk.service.config.ServiceConfig;
 import com.connectsdk.service.config.ServiceDescription;
 import com.connectsdk.service.sessions.LaunchSession;
 import com.connectsdk.service.sessions.LaunchSession.LaunchSessionType;
-import com.connectsdk.samsungmultiscreen.MultiScreenWebAppSession;
+import com.connectsdk.service.sessions.MultiScreenWebAppSession;
 import com.connectsdk.service.sessions.WebAppSession;
 import com.samsung.multiscreen.application.Application;
 import com.samsung.multiscreen.application.Application.Status;
@@ -32,6 +22,15 @@ import com.samsung.multiscreen.device.Device;
 import com.samsung.multiscreen.device.DeviceAsyncResult;
 import com.samsung.multiscreen.device.DeviceError;
 import com.samsung.multiscreen.device.DeviceFactory;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class MultiScreenService extends DeviceService implements MediaPlayer, WebAppLauncher {
 	public static final String ID = "MultiScreen";

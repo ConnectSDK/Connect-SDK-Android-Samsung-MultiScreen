@@ -1,14 +1,8 @@
-package com.connectsdk.samsungmultiscreen;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+package com.connectsdk.service.sessions;
 
 import com.connectsdk.core.Util;
 import com.connectsdk.service.DeviceService;
-import com.connectsdk.samsungmultiscreen.MultiScreenService;
+import com.connectsdk.service.MultiScreenService;
 import com.connectsdk.service.capability.MediaControl;
 import com.connectsdk.service.capability.MediaPlayer;
 import com.connectsdk.service.capability.listeners.ResponseListener;
@@ -16,8 +10,6 @@ import com.connectsdk.service.command.ServiceCommand;
 import com.connectsdk.service.command.ServiceCommandError;
 import com.connectsdk.service.command.ServiceSubscription;
 import com.connectsdk.service.command.URLServiceSubscription;
-import com.connectsdk.service.sessions.LaunchSession;
-import com.connectsdk.service.sessions.WebAppSession;
 import com.samsung.multiscreen.application.Application;
 import com.samsung.multiscreen.application.Application.Status;
 import com.samsung.multiscreen.application.ApplicationAsyncResult;
@@ -29,6 +21,12 @@ import com.samsung.multiscreen.channel.ChannelError;
 import com.samsung.multiscreen.channel.IChannelListener;
 import com.samsung.multiscreen.device.DeviceAsyncResult;
 import com.samsung.multiscreen.device.DeviceError;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MultiScreenWebAppSession extends WebAppSession {
 	protected MultiScreenService service;
