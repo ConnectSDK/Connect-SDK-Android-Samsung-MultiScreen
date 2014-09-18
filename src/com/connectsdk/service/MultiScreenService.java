@@ -89,6 +89,9 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 	
 	@Override
 	public void disconnect() {
+		if (connected == false) 
+			return;
+		
 		for (MultiScreenWebAppSession session: sessions.values()) {
 			session.disconnectFromWebApp();
 		}
