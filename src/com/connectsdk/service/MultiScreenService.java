@@ -295,7 +295,7 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 			public void onResult(final Application application) {
 				Map<String, String> parameters = new HashMap<String, String>();
 				
-				Iterator keys = fParams.keys();
+				Iterator<?> keys = fParams.keys();
 				while (keys.hasNext()) {
 					String key = (String) keys.next();
 					try {
