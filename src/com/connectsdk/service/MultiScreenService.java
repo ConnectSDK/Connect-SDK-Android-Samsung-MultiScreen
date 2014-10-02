@@ -96,7 +96,9 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 	
 	@Override
 	public void disconnect() {
-		if (sessions!=null)
+		if (connected == false) 
+			return;
+		
 		for (MultiScreenWebAppSession session: sessions.values()) {
 			session.disconnectFromWebApp();
 		}
@@ -300,8 +302,7 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 			public void onResult(final Application application) {
 				Map<String, String> parameters = new HashMap<String, String>();
 				
-				@SuppressWarnings("rawtypes")
-				Iterator keys = fParams.keys();
+				Iterator<?> keys = fParams.keys();
 				while (keys.hasNext()) {
 					String key = (String) keys.next();
 					try {
