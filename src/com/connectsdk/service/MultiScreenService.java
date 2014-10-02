@@ -39,8 +39,11 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 	Map<String, MultiScreenWebAppSession> sessions;
 
 	public MultiScreenService(ServiceDescription serviceDescription,
-			ServiceConfig serviceConfig) {
+			ServiceConfig serviceConfig) throws InstantiationException {
 		super(serviceDescription, serviceConfig);
+		
+		if ((serviceDescription.getLocationXML()!=null)&&
+				serviceDescription.getLocationXML().contains("samsung:multiscreen:1")) {
 
 		Map<String, Object> map = new HashMap<String, Object>();
 		
@@ -52,6 +55,10 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 		map.put("ServiceURI", serviceDescription.getServiceURI());
 		
 		this.device = DeviceFactory.createWithMap(map);
+		
+		}
+		
+		else throw new InstantiationException();
 	}
 
 	public static JSONObject discoveryParameters() {
@@ -89,6 +96,7 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 	
 	@Override
 	public void disconnect() {
+		if (sessions!=null)
 		for (MultiScreenWebAppSession session: sessions.values()) {
 			session.disconnectFromWebApp();
 		}
@@ -292,6 +300,7 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 			public void onResult(final Application application) {
 				Map<String, String> parameters = new HashMap<String, String>();
 				
+				@SuppressWarnings("rawtypes")
 				Iterator keys = fParams.keys();
 				while (keys.hasNext()) {
 					String key = (String) keys.next();
