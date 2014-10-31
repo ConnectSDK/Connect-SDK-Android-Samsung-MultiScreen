@@ -8,6 +8,7 @@ import com.connectsdk.service.capability.MediaPlayer;
 import com.connectsdk.service.capability.WebAppLauncher;
 import com.connectsdk.service.capability.listeners.ResponseListener;
 import com.connectsdk.service.command.ServiceCommandError;
+import com.connectsdk.service.command.ServiceSubscription;
 import com.connectsdk.service.config.ServiceConfig;
 import com.connectsdk.service.config.ServiceDescription;
 import com.connectsdk.service.sessions.LaunchSession;
@@ -126,6 +127,23 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 	@Override
 	public CapabilityPriorityLevel getMediaPlayerCapabilityLevel() {
 		return CapabilityPriorityLevel.HIGH;
+	}
+	
+	@Override
+	public CapabilityPriorityLevel getMediaInfoCapabilityPriorityLevel() {
+		return CapabilityPriorityLevel.VERY_LOW;
+	}
+
+	@Override
+	public void getMediaInfo(MediaInfoListener listener) {
+		Util.postError(listener, ServiceCommandError.notSupported());	
+	}
+
+	@Override
+	public ServiceSubscription<MediaInfoListener> subscribeMediaInfo(
+			MediaInfoListener listener) {
+		listener.onError(ServiceCommandError.notSupported());
+		return null;
 	}
 
 	@Override
