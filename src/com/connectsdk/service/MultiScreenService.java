@@ -131,7 +131,7 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 	
 	@Override
 	public CapabilityPriorityLevel getMediaInfoCapabilityPriorityLevel() {
-		return CapabilityPriorityLevel.VERY_LOW;
+		return CapabilityPriorityLevel.HIGH;
 	}
 
 	@Override
