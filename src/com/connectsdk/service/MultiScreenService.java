@@ -1,8 +1,18 @@
 package com.connectsdk.service;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.connectsdk.core.MediaInfo;
 import com.connectsdk.core.Util;
+import com.connectsdk.discovery.DiscoveryFilter;
 import com.connectsdk.service.capability.MediaControl;
 import com.connectsdk.service.capability.MediaPlayer;
 import com.connectsdk.service.capability.WebAppLauncher;
@@ -23,15 +33,6 @@ import com.samsung.multiscreen.device.Device;
 import com.samsung.multiscreen.device.DeviceAsyncResult;
 import com.samsung.multiscreen.device.DeviceError;
 import com.samsung.multiscreen.device.DeviceFactory;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 public class MultiScreenService extends DeviceService implements MediaPlayer, WebAppLauncher {
 	public static final String ID = "MultiScreen";
@@ -62,18 +63,9 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 		else throw new InstantiationException();
 	}
 
-	public static JSONObject discoveryParameters() {
-		JSONObject params = new JSONObject();
-		
-		try {
-			params.put("serviceId", ID);
-//			params.put("filter",  "urn:samsung.com:service:MultiScreenService:1");
-			params.put("filter",  "urn:dial-multiscreen-org:service:dial:1");
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-
-		return params;
+	public static DiscoveryFilter discoveryFilter() {
+//		params.put("filter",  "urn:samsung.com:service:MultiScreenService:1");
+		return new DiscoveryFilter(ID, "urn:dial-multiscreen-org:service:dial:1");
 	}
 	
 	@Override
