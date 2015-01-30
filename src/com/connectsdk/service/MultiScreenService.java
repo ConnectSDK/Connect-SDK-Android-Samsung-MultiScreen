@@ -25,6 +25,7 @@ import com.connectsdk.service.sessions.LaunchSession;
 import com.connectsdk.service.sessions.LaunchSession.LaunchSessionType;
 import com.connectsdk.service.sessions.MultiScreenWebAppSession;
 import com.connectsdk.service.sessions.WebAppSession;
+import com.connectsdk.service.sessions.WebAppSession.WebAppPinStatusListener;
 import com.samsung.multiscreen.application.Application;
 import com.samsung.multiscreen.application.Application.Status;
 import com.samsung.multiscreen.application.ApplicationAsyncResult;
@@ -479,6 +480,29 @@ public class MultiScreenService extends DeviceService implements MediaPlayer, We
 		});
 	}
 	
+	@Override
+	public void pinWebApp(LaunchSession launchSession,
+			ResponseListener<Object> listener) {
+		Util.postError(listener, ServiceCommandError.notSupported());
+	}
+
+	@Override
+	public void unPinWebApp(String webAppId, ResponseListener<Object> listener) {
+		Util.postError(listener, ServiceCommandError.notSupported());
+	}
+
+	@Override
+	public void isWebAppPinned(String webAppId, WebAppPinStatusListener listener) {
+		Util.postError(listener, ServiceCommandError.notSupported());
+	}
+
+	@Override
+	public ServiceSubscription<WebAppPinStatusListener> subscribeIsWebAppPinned(
+			String webAppId, WebAppPinStatusListener listener) {
+		Util.postError(listener, ServiceCommandError.notSupported());
+		return null;
+	}
+
 	public Device getDevice() {
 		return device;
 	}
